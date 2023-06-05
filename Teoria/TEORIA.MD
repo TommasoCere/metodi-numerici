@@ -69,12 +69,69 @@
         Il sistema riceve un feedback in base alle sue azioni e deve imparare a massimizzare il feedback ricevuto.
 </br></br>
 - Reti Neurali Artificiali: Neurone Biologico e Neurone artificiale. Funzioni di attivazione. Percettrone a soglia e limiti.
+    +   Neurone Biologico: è un tipo di cellula del sistema nervoso che è in grado di ricevere, elaborare e trasmettere informazioni.
+        I neuroni sono collegati tra loro tramite sinapsi. Quando un neurone riceve un segnale da altri neuroni, 
+        elabora le informazioni e trasmette il segnale ai neuroni collegati tramite sinapsi.
+        E' composto da:
+        +   Dendriti: sono le estremità del neurone che ricevono i segnali da altri neuroni.
+        +   Corpo cellulare: elabora i segnali ricevuti dai dendriti e trasmette il segnale ai neuroni collegati tramite sinapsi.
+        +   Assone: trasmette il segnale ai neuroni collegati tramite sinapsi.
+        +   Sinapsi: sono le connessioni tra i neuroni. Quando un neurone riceve un segnale da altri neuroni, 
+            elabora le informazioni e trasmette il segnale ai neuroni collegati tramite sinapsi.
+    +   Neurone artificiale: è un modello matematico che si ispira al neurone biologico.
+        E' composto da:
+        +   Input: sono i segnali in ingresso al neurone.
+        +   Pesi: sono i parametri che vengono utilizzati per modificare l'importanza dei segnali in ingresso.
+        +   Funzione di attivazione: è una funzione che viene utilizzata per calcolare l'output del neurone.
+        +   Output: è il segnale in uscita dal neurone.
+    +   Funzioni di attivazione: serve per derminare se un neurone deve essere attivato o meno.
+        Si tratta di una funzione non lineare che prende in input la somma pesata dei segnali in ingresso al neurone e restituisce un output.
+    +   Percettrone a soglia: è un modello matematico di neurone artificiale che prende in input un vettore di valori numerici e 
+        restituisce un output binario (0 o 1).
+        Si tratta di una funzione non lineare che prende in input la somma pesata dei segnali in ingresso al neurone e restituisce un output.
+        +   Limiti del Percettrone a soglia: il percettrone a soglia non è in grado di modellare funzioni non lineari.
+            Per ovviare a questo problema sono state introdotte le reti neurali feedforward.
 </br></br>
 - Reti Neurali artificiali: Input Layer, Hidden Layer, Output Layer. Reti FeedForward, Reti ricorrenti.
+    +   Una rete neurale artificiale è costituita da neuroni artificiali collegati tr loro. Ogni connessione, come in un cervello biologico,
+        può trasmettere un segnale da un neurone all'altro. I neuroni sono organizzati in strati. Ogni connessione ha un peso che 
+        determina l'importanza del segnale trasmesso.
+        Le reti neurali artificiali sono composte da gruppi di neuroni artificiali organizzati in strati:
+        +   Input Layer: è lo strato di input della rete neurale. I neuroni di questo strato ricevono i dati in input alla rete neurale.
+        +   Hidden Layer: è uno strato intermedio tra lo strato di input e lo strato di output. 
+            I neuroni di questo strato elaborano i dati ricevuti in input e trasmettono il segnale ai neuroni dello strato successivo.
+        +   Output Layer: è lo strato di output della rete neurale. I neuroni di questo strato restituiscono il risultato della rete neurale.
+    +   Reti FeedForward: è un tipo di rete neurale artificiale in cui i segnali si muovono in una sola direzione,
+        dallo strato di input allo strato di output.
+    +   Reti ricorrenti: è un tipo di rete neurale artificiale in cui i segnali si muovono in entrambe le direzioni,
+        dallo strato di input allo strato di output e viceversa.
 </br></br>
 - MultiLayer Preceptron (MLP)
+    +   E' un tipo di rete neurale artificiale feedforward in cui i neuroni sono organizzati in strati. Si tratta di uno dei modelli più utilizzati per il deep learning.
+        L'MLP è in grado di apprendere relazioni complesse e non lineari tra i dati di input e l'output desiderato grazie alla sua struttura multistrato e alla capacità 
+        di modellare rappresentazioni gerarchiche dei dati. L'addestramento dell'MLP avviene utilizzando algoritmi di ottimizzazione come la retropropagazione dell'errore, 
+        che calcola e aggiorna i pesi delle connessioni in base all'errore tra l'output previsto e l'output desiderato.
+        Il MLP più comune è l'FFNN (FeedForward Neural Network), ed è composto da:
+        +   un input Layer: è lo strato di input della rete neurale. I neuroni di questo strato ricevono i dati in input alla rete neurale.
+        +   uno o più Hidden Layer: è uno strato intermedio tra lo strato di input e lo strato di output. 
+            I neuroni di questo strato elaborano i dati ricevuti in input e trasmettono il segnale ai neuroni dello strato successivo.
+        +   un output Layer: è lo strato di output della rete neurale. I neuroni di questo strato restituiscono il risultato della rete neurale.
 </br></br>
 - Training di una rete neurale. Forward Propagagation e Backward Propagation.
+    +   Training di una rete neurale: è il processo di addestramento di una rete neurale artificiale.
+        Iterativamente, la rete neurale viene esposta a un insieme di dati di addestramento e viene aggiornata in base all'errore tra l'output previsto e l'output desiderato.
+        L'obiettivo del training è quello di ridurre l'errore tra l'output previsto e l'output desiderato.
+        +   Forward Propagation: è il processo di calcolo dell'output di una rete neurale artificiale.
+            L'output di ogni neurone viene calcolato utilizzando la funzione di attivazione e i pesi delle connessioni.
+        +   Backward Propagation: è il processo di aggiornamento dei pesi delle connessioni di una rete neurale artificiale.
+            L'aggiornamento dei pesi delle connessioni avviene utilizzando l'algoritmo di ottimizzazione della retropropagazione dell'errore.
 </br></br>
 - Loss Function e Funzione costo.
+    +   Loss Function: è una funzione che misura l'errore tra l'output previsto e l'output desiderato.
+        L'obiettivo del training di una rete neurale artificiale è quello di ridurre l'errore tra l'output previsto e l'output desiderato.
+        La loss function viene utilizzata per calcolare l'errore tra l'output previsto e l'output desiderato.
+    +   Funzione costo: è una funzione che misura l'errore tra l'output previsto e l'output desiderato.
+        L'obiettivo del training di una rete neurale artificiale è quello di ridurre l'errore tra l'output previsto e l'output desiderato.
+        La funzione costo viene utilizzata per calcolare l'errore tra l'output previsto e l'output desiderato.
+        La funzione costo viene calcolata come: $C = \frac{\sum_{i=1}^{n} L(y_i, \hat{y_i})}{n}$ dove $n$ è il numero di esempi di addestramento, $y_i$ è l'osservazione effettiva dell'esempio di training i-esimo, $\hat{y_i}$ è la previsione dell'esempio di training i-esimo.
 </br></br>
