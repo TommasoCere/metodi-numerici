@@ -51,5 +51,30 @@
         le caratteristiche dai dati, eliminando la necessità di una pre-elaborazione manuale. Tuttavia, richiede una grande quantità 
         di dati di addestramento e risorse computazionali per l'addestramento.
 </br></br>
-- Classificazione degli algoritmi di Machine Learning: Algoritmi Supervisionati (Regressione e classificazione), Algoritmi non supervisionati (Clustering ed Associazione), Apprendimento Semi-supervisionato, 
-Apprendimento con rinforzo.
+- Classificazione degli algoritmi di Machine Learning: Algoritmi Supervisionati (Regressione e classificazione), Algoritmi non supervisionati 
+    (Clustering ed Associazione), Apprendimento Semi-supervisionato, Apprendimento con rinforzo.
+    +   Supervisionato: è un tipo di apprendimento nel quale vengono presentati i dati di input e gli output che essi dovrebbe generare, 
+        con lo scopo di apprendere una regola generale in grado di mappare la relazione tra gli stessi.
+        +   Regressione: è un tipo di apprendimento supervisionato che si occupa di predire un valore numerico continuo. In altre parole,
+            si tratta di modellare una relazione tra le variabili di input e una variabile di output continua.
+        +   Classificazione: è un tipo di apprendimento supervisionato che si occupa di predire un valore discreto.
+    +   Non supervisionato: è un tipo di apprendimento nel quale non vengono presentati gli output attesi, 
+        ma il sistema deve essere in grado di trovare da solo la struttura dei dati. In questo modo si vanno a creare classi con dati più utili
+        per le analisi successive e permettendo si scoprire nuove informazioni nei dati che non erano state considerate.
+        +   Clustering: è un tipo di apprendimento non supervisionato che si occupa di raggruppare gli oggetti in base alle loro caratteristiche.
+        +   Associazione: è un tipo di apprendimento non supervisionato che si occupa di trovare le relazioni tra gli oggetti.
+    +   Semi-supervisionato: è un tipo di apprendimento nel quale vengono presentati sia dati di input che gli output attesi, 
+        ma solo per una parte dei dati. Il sistema deve essere in grado di trovare da solo la struttura dei dati.
+    +   Rinforzo: è un tipo di apprendimento nel quale il sistema deve imparare a prendere decisioni in base alle interazioni con l'ambiente. 
+        Il sistema riceve un feedback in base alle sue azioni e deve imparare a massimizzare il feedback ricevuto.
+</br></br>
+- Reti Neurali Artificiali: Neurone Biologico e Neurone artificiale. Funzioni di attivazione. Percettrone a soglia e limiti.
+</br></br>
+- Reti Neurali artificiali: Input Layer, Hidden Layer, Output Layer. Reti FeedForward, Reti ricorrenti.
+</br></br>
+- MultiLayer Preceptron (MLP)
+</br></br>
+- Training di una rete neurale. Forward Propagagation e Backward Propagation.
+</br></br>
+- Loss Function e Funzione costo.
+</br></br>
