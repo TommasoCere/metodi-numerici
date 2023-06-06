@@ -135,3 +135,18 @@
         La funzione costo viene utilizzata per calcolare l'errore tra l'output previsto e l'output desiderato.
         La funzione costo viene calcolata come: $C = \frac{\sum_{i=1}^{n} L(y_i, \hat{y_i})}{n}$ dove $n$ è il numero di esempi di addestramento, $y_i$ è l'osservazione effettiva dell'esempio di training i-esimo, $\hat{y_i}$ è la previsione dell'esempio di training i-esimo.
 </br></br>
+- Reti neurali Convoluzionali.
+    +   Le reti MLP mancano di invarianza per traslazione, il che significa che sono sensibili ai cambiamenti di posizione dei pixel all'interno di un'immagine.
+        Le reti neurali convoluzionali (CNN) sono reti profonde (deep) ispirate alle ricerche biologiche di Hubel e
+        Wiesel durante lo studio del cervello dei gatti. Utilizzano due tipi di celle:
+        +   celle semplici : specializzate nella rilevazione di caratteristiche locali dell'input visivo (feature
+            extractor), (Convoluzioni)
+        +   celle complesse : specializzate nell'integrazione (pooling) delle informazioni provenienti da diverse posizioni
+            retinotopiche per formare una rappresentazione globale dell'input visivo, preservando le caratteristiche
+            invarianti per posizione
+</br></br>
+- Architettura di una rete CNN: parte convoluzionee parte fully-connected
+    +   La parte convoluzionale consiste di strati convoluzionali seguite da funzioni di attivazione non lineare
+        tipo(RELU) e di pooling. Questa parte costituisce il componente essenziale dell'estrazione di feature
+    +   La parte fully-connected consiste in un'architettura di rete neurale completamente connessa. Questa
+        parte esegue il compito di classificazione in base all'input dalla parte convoluzionale.
