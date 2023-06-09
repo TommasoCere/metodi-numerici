@@ -150,3 +150,92 @@
         tipo(RELU) e di pooling. Questa parte costituisce il componente essenziale dell'estrazione di feature
     +   La parte fully-connected consiste in un'architettura di rete neurale completamente connessa. Questa
         parte esegue il compito di classificazione in base all'input dalla parte convoluzionale.
+</br></br>
+- Sotto quali condizioni, il metodo di discesa del gradiente con passo fisso converge a un punto stazionario della funzione costo, 
+  che può essere un minimo globale se la funzione è convessa?
+    +   La discesa del gradiente trova il minimo globale se la funzione costo C è convessa e se sono
+        soddisfatte le seguenti condizioni:
+        +   Condizione di Lipschitz per il gradiente: deve esistere una costante tale che il gradiente della funzione costo
+            sia limitato superiormente da tale costante. In altre parole, il gradiente della funzione costo non deve essere
+            troppo grande.
+        +   Step size: il passo di discesa deve essere scelto in modo che sia sufficientemente piccolo da garantire che
+            la funzione costo decresca in ogni iterazione. In altre parole, il passo di discesa non deve essere troppo grande.
+    E' importante anche sapere che la scelta del passo n può essere limitante in termini di efficienza e convergenza in problemi di grandi dimensioni.
+</br></br>
+- Non convessità della funzione di costo.
+    +   La funzione costo di una rete neurale è non convessa. Questo significa che la discesa del gradiente non trova il minimo globale.
+        Tuttavia, la discesa del gradiente trova un minimo locale. In altre parole, la discesa del gradiente trova un minimo locale che potrebbe non essere il minimo globale.
+        Per gestire la non convessità della funzione di costo, è necessario eseguire più volte la discesa del gradiente con diversi valori iniziali dei pesi.
+</br></br>
+- Importanza del learning rate nei metodi di discesa.
+    +   Il learning rate è un iperparametro che controlla la dimensione del passo di discesa del gradiente. Determina quanto velocemente o lentamente il modello si adatta ai dati.
+        Esso determina la dimensione dei passi che vengono compiuti durante l'aggiornamento dei parametri del modello lungo il gradiente della funzione di costo.
+        L'importanza del learning rate risiede nel fatto che esso può influenzare significativamente la convergenza del metodo di discesa del gradiente e la qualità della soluzione ottenuta. 
+        Un learning rate troppo grande può causare oscillazioni o divergenza del processo di ottimizzazione, mentre un learning rate troppo piccolo può rallentare notevolmente la convergenza, 
+        richiedendo più iterazioni per raggiungere una soluzione accettabile.
+        Un learning rate adeguato è essenziale per ottenere una convergenza stabile e rapida del metodo di discesa del gradiente. Un learning rate ottimale dipende dalla natura del problema, 
+        dalla forma della funzione di costo e dalla scala dei dati.
+</br></br>
+- Exact line search.
+    +   Gli algoritmi di ottimizzazione unidimensionale per trovare la dimensione del passo ottimale sono genericamnete chiamati exact line search.
+</br></br>
+- Inexact line search rule , Armijo rule.
+    +   La regola di Armijo, o regola di Armijo-Goldstein, è un criterio utilizzato nell'ottimizzazione numerica per determinare la dimensione del passo (o step size) da utilizzare 
+        durante la ricerca lineare in una direzione di discesa all'interno di un algoritmo di ottimizzazione. Questa regola garantisce una riduzione significativa della funzione costo 
+        durante l'ottimizzazione, assicurando nel contempo una convergenza adeguata dell'algoritmo.
+        La regola di Armijo si basa sul concetto di "backtracking" o retrotracciamento, che consiste nel ridurre gradualmente la dimensione del passo fino a trovare un valore che soddisfi determinate condizioni. 
+        L'obiettivo è trovare un passo che garantisca una riduzione sufficiente del valore della funzione costo durante la ricerca lineare.
+        Il processo inizia con un punto iniziale e riduce progressivamente la dimensione del passo, moltiplicandola per un parametro 𝜎 compreso tra 0 e 1. 
+        Questo processo viene iterato fino a quando non viene raggiunta una riduzione sufficiente nella funzione obiettivo, rispettando una specifica condizione di Armijo.
+        La condizione di Armijo richiede che la riduzione della funzione costo sia proporzionale alla riduzione prevista calcolata in base al gradiente e al passo corrente. 
+        Questo criterio permette di trovare uno step size adeguato che assicura una significativa diminuzione della funzione costo.
+        Utilizzando la regola di Armijo, è possibile controllare la dimensione del passo durante l'ottimizzazione, bilanciando la velocità di convergenza con la riduzione della funzione costo. 
+        In questo modo, si può garantire una progressione efficace verso la soluzione ottimale del problema di ottimizzazione.
+</br></br>
+- Metodo di ottimizzazione del gradient descent con momento. Perchè è stato studiato e formula di aggiornamento dei pesi.
+    +   Il Gradient Descent aggiorna i parametri con: $w_{k+1} = w_k - \eta \nabla C(w_k)$.
+        La discesa del gradiente trova il minimo globale se la funzione costo C è convessa e se sono soddisfatte le condizioni di Lipschitz per il gradiente e lo step size.
+        Questo metodo è stato studiato per affrontare due problematiche comuni nell'ottimizzazione: la lentezza della convergenza e la possibilità di rimanere bloccati in minimi locali.
+        Il concetto chiave del metodo del gradiente con momento è l'introduzione di un termine di momento, che rappresenta l'accumulo di informazioni sulle iterazioni precedenti per guidare l'aggiornamento dei pesi. 
+        Il momento agisce come una sorta di "inerzia" che accelera l'ottimizzazione nella direzione in cui la discesa del gradiente è costante e rallenta quando la direzione cambia bruscamente.
+</br></br>
+- Iperparametri di una rete neurale.
+    +   Gli iperparametri sono parametri esterni al modello di machine learning che devono essere impostati prima dell'avvio del processo di addestramento. A differenza dei parametri del modello,
+        che vengono appresi durante il processo di addestramento stesso, gli iperparametri influenzano il comportamento del processo di addestramento e la configurazione del modello.
+        Gli iperparametri devono essere scelti con cura, in quanto possono influenzare significativamente la qualità della soluzione ottenuta e la velocità di convergenza del processo di addestramento.
+        Gli iperparametri di un modello di rete neurale includono:
+            - numero di epoche di addestramento;
+            - dimensione del batch di addestramento;
+            - learning rate;
+            - funzione di costo;
+            - architettura della rete neurale (numero di layer, numero di neuroni per layer, tipo di layer);
+            - funzione di attivazione dei neuroni;
+            - regolarizzazione (early stopping, dropout, L1, L2);
+            - ottimizzatore (Gradient Descent, SGD, Adam, Adagrad, RMSProp);
+            - ecc.
+</br></br>
+- learning rate scheduling: step decay, decadimento esponenziale, decadimento dipendente dal tempo.
+    +   Durante l'allenamento di un modello di machine learning, la regolazione del learning rate, o tasso di apprendimento, è spesso altrettanto importante della scelta dell'ottimizzatore. 
+        La selezione adeguata del learning rate può influire sulla velocità e sulla qualità della convergenza dell'algoritmo di ottimizzazione.
+        All'inizio dell'allenamento, un learning rate elevato è auspicabile poiché i pesi del modello sono lontani dai minimi. Un learning rate alto consente un rapido aggiornamento dei pesi, 
+        accelerando l'apprendimento iniziale. Tuttavia, nella fase finale dell'apprendimento, quando i pesi si avvicinano ai minimi, un learning rate basso è più appropriato. 
+        Riducendo gradualmente il learning rate, si aumenta la probabilità di raggiungere il minimo globale senza oscillazioni eccessive.
+        La regolazione del learning rate richiede la considerazione di diversi aspetti. In primo luogo, è importante selezionare una dimensione adeguata per il learning rate. 
+        Se il learning rate è troppo grande, l'ottimizzazione può divergere, mentre se è troppo piccolo, l'allenamento richiederà molto tempo o si otterrà un risultato subottimale. 
+        Inoltre, è importante considerare il tasso di decadimento del learning rate nel corso dell'allenamento. Se il learning rate rimane elevato per troppo tempo, si può rimbalzare intorno al minimo senza raggiungerlo. 
+        Un decadimento graduale del learning rate può essere vantaggioso per raggiungere un compromesso tra la velocità di convergenza e la precisione del risultato finale.
+</br></br>
+- Learning rate adattivo: Adagrad, RMSProp, Adadelta, Adam.
+    +   La regolazione del learning rate è una sfida nell'ottimizzazione dei modelli di machine learning, poiché gli iperparametri devono essere definiti in anticipo e dipendono dal tipo di modello e problema. 
+        Inoltre, applicare lo stesso learning rate a tutti gli aggiornamenti dei pesi potrebbe non essere ottimale, specialmente quando si hanno dati sparsi e si desidera aggiornare i pesi in modo diverso.
+        Per affrontare queste sfide, sono stati sviluppati quattro metodi rappresentativi che modificano in modo adattivo il learning rate:
+        +   Adagrad: Adagrad adatta il learning rate per ogni parametro del modello in base alla frequenza degli aggiornamenti precedenti. Ciò significa che i parametri che vengono aggiornati più frequentemente 
+            hanno un learning rate ridotto, mentre i parametri meno frequentemente aggiornati hanno un learning rate maggiore. Questo approccio aiuta a gestire i problemi di sparsity dei dati.
+        +   RMSProp: RMSProp (Root Mean Square Propagation) modifica il learning rate in base alla media mobile degli aggiornamenti precedenti dei gradienti. Questo metodo attenua l'impatto dei gradienti di grandi dimensioni, 
+            consentendo una regolazione più stabile del learning rate nel corso dell'allenamento.
+        +   Adadelta: Adadelta è un'altra tecnica che adatta il learning rate in base alla media mobile degli aggiornamenti dei gradienti precedenti. Tuttavia, a differenza di RMSProp, 
+            Adadelta utilizza anche una stima della varianza dei gradienti per regolare il learning rate. Questo approccio permette un aggiornamento più stabile dei pesi nel corso dell'allenamento.
+        +   Adam: Adam (Adaptive Moment Estimation) combina le caratteristiche di Adagrad e RMSProp. Utilizza la media mobile dei gradienti e la varianza per adattare il learning rate. Inoltre, 
+            incorpora un termine di momento che tiene conto della storia degli aggiornamenti precedenti dei gradienti. Adam è uno dei metodi più utilizzati in pratica ed è efficace in una vasta gamma di problemi.
+
+
