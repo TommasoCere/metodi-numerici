@@ -237,5 +237,6 @@
             Adadelta utilizza anche una stima della varianza dei gradienti per regolare il learning rate. Questo approccio permette un aggiornamento più stabile dei pesi nel corso dell'allenamento.
         +   Adam: Adam (Adaptive Moment Estimation) combina le caratteristiche di Adagrad e RMSProp. Utilizza la media mobile dei gradienti e la varianza per adattare il learning rate. Inoltre, 
             incorpora un termine di momento che tiene conto della storia degli aggiornamenti precedenti dei gradienti. Adam è uno dei metodi più utilizzati in pratica ed è efficace in una vasta gamma di problemi.
-
-
+</br></br>
+- Altro
+    +   Il vantaggio di jacobi è che si può parallelizzare. Ma nel caso non si parallelizza risulta essere più lento di gauss seidel
